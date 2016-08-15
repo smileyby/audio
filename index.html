@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+  <title>语音测试</title>
+</head>
+<style>
+  .play,.pause,.time{
+    width: 200px;
+    height: 200px;
+    background: #ff6700;
+    text-align: center;
+    line-height: 200px;
+    font-size: 22px;
+    color: #fff;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .checked {
+    background-color: #ff5471;
+  }
+</style>
+<body>
+  <!-- <div class="play">播放</div>
+  <div class="pause">暂停</div> -->
+  <div class="time"></div>
+  <audio src="http://7xr0no.com2.z0.glb.qiniucdn.com/1459570290_1456296691_1.mp3" id="vioce"></audio>
+</body>
+<!-- <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script> -->
+<script>
+        var myVid=document.getElementById("vioce");
+        myVid.addEventListener("loadeddata", function(){
+
+          alert("加载完成");
+
+          var time = parseInt(myVid.duration,10) + "s";
+
+          document.getElementsByClassName("time")[0].innerText = time;
+
+        });
+</script>
+</html>
